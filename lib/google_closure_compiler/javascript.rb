@@ -10,7 +10,7 @@ module GoogleClosureCompiler
       expand_closure_dependencies if closure_require_statements_used?
       
       if compiler_cli_installed?
-        out_file = File.join(RAILS_ROOT, 'public', 'javascripts', 'google_closure_compiler_tmp_output.js')
+        out_file = File.join(Rails.root, 'public', 'javascripts', 'google_closure_compiler_tmp_output.js')
         options = {
           :js => content_file_path,
           :js_output_file => out_file,
@@ -55,7 +55,7 @@ module GoogleClosureCompiler
     end
     
     def content_file_path
-      File.join(RAILS_ROOT, 'public', 'javascripts', 'google_closure_compiler_tmp.js')
+      File.join(Rails.root, 'public', 'javascripts', 'google_closure_compiler_tmp.js')
     end
     
     def expanded_content_file_path
